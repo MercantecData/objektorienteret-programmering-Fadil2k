@@ -9,14 +9,16 @@ namespace Test1Lib
 
         List<Person> PersonList = new List<Person>();
 
-        public void AddPerson(string name, int age, string job, string company)
+        public void AddPerson(Person person)
         {
-            PersonList.Add(new Person(name, age, job, company));
+            PersonList.Add(person);
 
         }
-        public void RemovePerson(string name)
+
+        public void RemovePerson(Person person)
         {
-            PersonList.RemoveAll(x => x.name == name);
+            
+            //PersonList.RemoveAll(x => x.name == name);
         }
     } 
 }

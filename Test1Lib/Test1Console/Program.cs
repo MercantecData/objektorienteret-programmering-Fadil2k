@@ -7,7 +7,7 @@ namespace Test1Console
     {
         static void Main(string[] args)
         {
-            DB.AddPerson("Lars", 2, "Kok", "Danske Kokke");
+            DB.AddPerson(Person.name == "Lars", ;
         }
     }
 }
