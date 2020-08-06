@@ -55,5 +55,17 @@ namespace School
             this.age = age;
         }
 
+        //Add team
+        public void Add(Team team)
+        {
+            this.teamsAssigned.Add(team);
+        }
+
+        //Remove team
+        public void Remove(Team team)
+        {
+            this.teamsAssigned.Remove(team);
+        }
+
     }
 }

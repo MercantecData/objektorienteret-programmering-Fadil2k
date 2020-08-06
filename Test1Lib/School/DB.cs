@@ -40,5 +40,131 @@ namespace School
 
             EmployeeID++;
         }
+
+        //Add new team
+        public void Add(string name, string description)
+        {
+            Team team = new Team(TeamID, name, description);
+            Teams.Add(team);
+
+            TeamID++;
+        }
+
+
+        //Remove student
+        public void Remove(Student student)
+        {
+            Students.Remove(student);
+        }
+
+        //Remove employee
+        public void Remove(Employee employee)
+        {
+            Employees.Remove(employee);
+        }
+
+        //Remove team
+        public void Remove(Team team)
+        {
+            Teams.Remove(team);
+        }
+
+        //List all students
+        public List<Student> listStudents()
+        {
+            return Students;
+        }
+
+        //List all employees
+        public List<Employee> listEmployees()
+        {
+            return Employees;
+        }
+
+        //List all teams
+        public List<Team> listTeams()
+        {
+            return Teams;
+        }
+
+        //Find specific student
+        public Student findStudent(string studentName)
+        {
+            foreach (var student in Students)
+            {
+                
+                string name;
+                name = student.getName();
+                if (name == studentName)
+                {
+
+                    return student;
+                    
+                }
+                
+            }
+            return null;
+        }
+
+        //Find specific employee
+        public Employee findEmployee(string empName)
+        {
+            foreach (var employee in Employees)
+            {
+
+                string name;
+                name = employee.getName();
+                if (name == empName)
+                {
+
+                    return employee;
+
+                }
+
+            }
+            return null;
+        }
+
+        //Find specific team
+        public Team findTeam(string teamName)
+        {
+            foreach (var team in Teams)
+            {
+
+                string name;
+                name = team.getName();
+                if (name == teamName)
+                {
+
+                    return team;
+
+                }
+
+            }
+            return null;
+        }
+
+        //Get paid status of employee salary
+        public bool checkPay(string empName)
+        {
+             Employee employee = findEmployee(empName);
+             return employee.getPaid();
+        }
+
+        //Find assigned teams for employee
+        public List<Team> assignedTeams(Employee employee)
+        {
+            return employee.getTeams();
+        }
+
+        //Find assigned teams for student
+        public List<Team> assignedTeams(Student student)
+        {
+            return student.getTeams();
+        }
+
+
+
     }
 }
+

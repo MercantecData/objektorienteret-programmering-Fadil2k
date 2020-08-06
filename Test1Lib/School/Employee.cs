@@ -21,13 +21,43 @@ namespace School
             this.teamsAssigned = teamsAssigned;
         }
 
+        //Get ID
+        public int getID()
+        {
+            return this.id;
+        }
+
+        //Get name
+        public string getName()
+        {
+            return this.name;
+        }
+
+        //Get salary
+        public decimal getSalary()
+        {
+            return this.salary;
+        }
+
+        //Get paid status
+        public bool getPaid()
+        {
+            return this.paid;
+        }
+
+        // Get assigned teams
+        public List<Team> getTeams()
+        {
+            return teamsAssigned;
+        }
+
         //Edit name
         public void Edit(string name)
         {
             this.name = name;
         }
         //Edit salary
-        public void edit(decimal salary)
+        public void Edit(decimal salary)
         {
             this.salary = salary;
         }
@@ -36,10 +66,17 @@ namespace School
         {
             this.paid = paid;
         }
-        // Return the list of assigned teams
-        public List<Team> assignedTeams()
+
+        //Add team
+        public void Add(Team team)
         {
-            return teamsAssigned;
+            this.teamsAssigned.Add(team);
+        }
+
+        //Remove team
+        public void Remove(Team team)
+        {
+            this.teamsAssigned.Remove(team);
         }
 
 
