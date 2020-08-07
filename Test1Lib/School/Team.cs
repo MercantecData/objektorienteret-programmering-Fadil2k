@@ -4,18 +4,20 @@ using System.Collections.Generic;
 namespace School
 {
     public class Team
-    { 
+    {
         private int id;
         private string name;
         private string description;
-        public List<Employee> Employees = new List<Employee>();
-        public List<Student> Students = new List<Student>();
+        private List<Employee> Employees = new List<Employee>();
+        private List<Student> Students = new List<Student>();
 
-        public Team(int id, string name, string description)
+        public Team(int id, string name, string description, List<Employee> Employees, List<Student> Students)
         {
             this.id = id;
             this.name = name;
             this.description = description;
+            this.Employees = Employees;
+            this.Students = Students;
         }
 
         //Get ID
@@ -43,13 +45,6 @@ namespace School
             Students.Add(student);
         }
 
-        //Remove a student
-        public void Remove(Student student)
-        {
-            student.Remove(this);
-            Students.Remove(student);
-        }
-
         //Add a employee
         public void Add(Employee employee)
         {
@@ -57,11 +52,33 @@ namespace School
             Employees.Add(employee);
         }
 
+        //Remove a student
+        public void Remove(Student student)
+        {
+            student.Remove(this);
+            Students.Remove(student);
+        }
+
+
         //Remove a employee
         public void Remove(Employee employee)
         {
             employee.Remove(this);
             Employees.Remove(employee);
+        }
+
+        //Find students assigned to team
+        public List<Student> assignedStudents(Team team)
+        {
+            return team.Students;
+
+        }
+
+        //Find employees assigned to team
+        public List<Employee> assignedEmployees(Team team)
+        {
+            return team.Employees;
+
         }
     }
 }

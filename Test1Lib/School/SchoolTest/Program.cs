@@ -10,16 +10,17 @@ namespace SchoolTest
         {
 
 
-            DB db = new DB(new List<Student>(), new List<Employee>(), new List<Team>());
+            DB db = new DB("Bandit skolen", new List<Student>(), new List<Employee>(), new List<Team>());
 
             db.Add("Banditterne", "Undervisning i kagesmagning");
-            db.Add("Lars", 22.50m, false);
+            db.Add("benny", 22.50m, false);
+            db.Add("Lars", 12);
 
-            string lars = "lars";
-            Student s = db.findStudent(lars);
+      
+            Student s = db.findStudent("Lars");
 
 
-            Console.Write(db.assignedTeams(s));
+            
         }
     }
 }

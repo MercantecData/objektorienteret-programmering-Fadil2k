@@ -5,6 +5,8 @@ namespace School
 {
     public class DB
     {
+        private string schoolName;
+
         //Student list
         private List<Student> Students = new List<Student>();
         private int StudentID; //Auto increment
@@ -17,8 +19,9 @@ namespace School
         private List<Team> Teams = new List<Team>();
         private int TeamID; //Auto increment
 
-        public DB(List<Student> Students, List<Employee> Employees, List<Team> Teams)
+        public DB(string schoolName, List<Student> Students, List<Employee> Employees, List<Team> Teams)
         {
+            this.schoolName = schoolName;
             this.Students = Students;
             this.Employees = Employees;
             this.Teams = Teams;
@@ -44,7 +47,7 @@ namespace School
         //Add new team
         public void Add(string name, string description)
         {
-            Team team = new Team(TeamID, name, description);
+            Team team = new Team(TeamID, name, description, new List<Employee>(), new List<Student>());
             Teams.Add(team);
 
             TeamID++;
@@ -75,6 +78,7 @@ namespace School
             return Students;
         }
 
+
         //List all employees
         public List<Employee> listEmployees()
         {
@@ -87,6 +91,17 @@ namespace School
             return Teams;
         }
 
+        //List assigned students in specific team
+        public List<Student> assignedStudents(Team team)
+        {
+            return team.assignedStudents(team);
+        }
+
+        //List assigned students in specific team
+        public List<Employee> assignedEmployees(Team team)
+        {
+            return team.assignedEmployees(team);
+        }
         //Find specific student
         public Student findStudent(string studentName)
         {
@@ -161,6 +176,18 @@ namespace School
         public List<Team> assignedTeams(Student student)
         {
             return student.getTeams();
+        }
+
+        //Find number for enrolled students
+        public int studentCount()
+        {
+            return StudentID;
+        }
+
+        //Find number for employees hired
+        public int employeeCount()
+        {
+            return EmployeeID;
         }
 
 
