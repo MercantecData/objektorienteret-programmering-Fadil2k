@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School", "School\School.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolTest", "School\SchoolTest\SchoolTest.csproj", "{907144AF-1536-470D-B771-0F77BE54D101}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test1Abstract", "Test1Abstract\Test1Abstract.csproj", "{8EC2B858-08DB-4DFF-8CC9-E1866E59B21E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{907144AF-1536-470D-B771-0F77BE54D101}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{907144AF-1536-470D-B771-0F77BE54D101}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{907144AF-1536-470D-B771-0F77BE54D101}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EC2B858-08DB-4DFF-8CC9-E1866E59B21E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EC2B858-08DB-4DFF-8CC9-E1866E59B21E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EC2B858-08DB-4DFF-8CC9-E1866E59B21E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EC2B858-08DB-4DFF-8CC9-E1866E59B21E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A954A649-71D5-460E-A1C7-36CF3BF2A050} = {2B5CBEF3-E79E-4E07-89D8-4EEE2BC0D6A5}
