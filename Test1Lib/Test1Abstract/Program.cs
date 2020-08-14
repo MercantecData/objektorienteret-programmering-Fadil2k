@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Test1Abstract
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             //Opgave 1
             Console.WriteLine("Opgave 1 Output");
@@ -34,7 +34,7 @@ namespace Test1Abstract
 
             //Opgave 3
             Console.WriteLine("Opgave 3 Output");
-            List<Person> Persons = new List<Person>();
+            var Persons = new List<Person>();
 
             Persons.Add(new Person("Lars", 22, Person.Gender.Male));
             Persons.Add(new Person("Bente", 52, Person.Gender.Female));

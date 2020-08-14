@@ -4,23 +4,21 @@ using School;
 
 namespace SchoolTest
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-
-
-            DB db = new DB("Bandit skolen", new List<Student>(), new List<Employee>(), new List<Team>());
+            var db = new DB("Bandit skolen", new List<Student>(), new List<Employee>(), new List<Team>());
 
             db.Add("Banditterne", "Undervisning i kagesmagning");
             db.Add("benny", 22.50m, false);
             db.Add("Lars", 12);
 
-      
-            Student s = db.findStudent("Lars");
 
+            var s = db.findStudent("Lars");
+            var e = db.findEmployee("benny");
 
-            
+            Console.WriteLine(e.getName());
         }
     }
 }

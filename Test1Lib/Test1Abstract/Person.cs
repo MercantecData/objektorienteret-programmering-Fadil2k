@@ -1,22 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Test1Abstract
 {
-
     public class Person : IComparable<Person>
     {
-        public string name;
-        public int age;
-        public Gender gender;
-
-        public Person(string name, int age, Gender gender)
-        {
-            this.name = name;
-            this.age = age;
-            this.gender = gender;
-        }
-
         public enum Gender
         {
             Male,
@@ -25,25 +12,29 @@ namespace Test1Abstract
             Undefined
         }
 
-        public override string ToString()
+        public int age;
+        public Gender gender;
+        public string name;
+
+        public Person(string name, int age, Gender gender)
         {
-            return $"{this.name}";
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
         }
 
         public int CompareTo(Person X)
         {
-            if (this.age < X.age)
-            {
+            if (age < X.age)
                 return 1;
-            }
-            else if (this.age > X.age)
-            {
+            if (age > X.age)
                 return -1;
-            }
-            else
-            {
-                return 0;
-            }
+            return 0;
+        }
+
+        public override string ToString()
+        {
+            return $"{name}";
         }
     }
 }

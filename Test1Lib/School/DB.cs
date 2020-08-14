@@ -1,22 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace School
 {
     public class DB
     {
-        private string schoolName;
+        //Employee list
+        private readonly List<Employee> Employees = new List<Employee>();
 
         //Student list
-        private List<Student> Students = new List<Student>();
-        private int StudentID; //Auto increment
-
-        //Employee list
-        private List<Employee> Employees = new List<Employee>();
-        private int EmployeeID; //Auto increment
+        private readonly List<Student> Students = new List<Student>();
 
         //Teams list
-        private List<Team> Teams = new List<Team>();
+        private readonly List<Team> Teams = new List<Team>();
+        private int EmployeeID; //Auto increment
+        private string schoolName;
+        private int StudentID; //Auto increment
         private int TeamID; //Auto increment
 
         public DB(string schoolName, List<Student> Students, List<Employee> Employees, List<Team> Teams)
@@ -30,15 +28,16 @@ namespace School
         //Add new student
         public void Add(string name, int age)
         {
-            Student student = new Student(StudentID, name, age, new List<Team>());
+            var student = new Student(StudentID, name, age, new List<Team>());
             Students.Add(student);
 
             StudentID++;
         }
+
         //Add new employee
         public void Add(string name, decimal salary, bool paid)
         {
-            Employee employee = new Employee(EmployeeID, name, salary, paid, new List<Team>());
+            var employee = new Employee(EmployeeID, name, salary, paid, new List<Team>());
             Employees.Add(employee);
 
             EmployeeID++;
@@ -47,7 +46,7 @@ namespace School
         //Add new team
         public void Add(string name, string description)
         {
-            Team team = new Team(TeamID, name, description, new List<Employee>(), new List<Student>());
+            var team = new Team(TeamID, name, description, new List<Employee>(), new List<Student>());
             Teams.Add(team);
 
             TeamID++;
@@ -102,42 +101,26 @@ namespace School
         {
             return team.assignedEmployees(team);
         }
+
         //Find specific student
         public Student findStudent(string studentName)
         {
             foreach (var student in Students)
             {
-                
                 string name;
                 name = student.getName();
-                if (name == studentName)
-                {
-
-                    return student;
-                    
-                }
-                
+                if (name == studentName) return student;
             }
+
             return null;
         }
 
         //Find specific employee
         public Employee findEmployee(string empName)
         {
-            foreach (var employee in Employees)
-            {
+            var result = Employees.Find(x => x.getName() == empName);
 
-                string name;
-                name = employee.getName();
-                if (name == empName)
-                {
-
-                    return employee;
-
-                }
-
-            }
-            return null;
+            return result;
         }
 
         //Find specific team
@@ -145,25 +128,19 @@ namespace School
         {
             foreach (var team in Teams)
             {
-
                 string name;
                 name = team.getName();
-                if (name == teamName)
-                {
-
-                    return team;
-
-                }
-
+                if (name == teamName) return team;
             }
+
             return null;
         }
 
         //Get paid status of employee salary
         public bool checkPay(string empName)
         {
-             Employee employee = findEmployee(empName);
-             return employee.getPaid();
+            var employee = findEmployee(empName);
+            return employee.getPaid();
         }
 
         //Find assigned teams for employee
@@ -189,9 +166,5 @@ namespace School
         {
             return EmployeeID;
         }
-
-
-
     }
 }
-

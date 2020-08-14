@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace School
 {
     public class Team
     {
-        private int id;
-        private string name;
-        private string description;
-        private List<Employee> Employees = new List<Employee>();
-        private List<Student> Students = new List<Student>();
+        private readonly string description;
+        private readonly List<Employee> Employees = new List<Employee>();
+        private readonly int id;
+        private readonly string name;
+        private readonly List<Student> Students = new List<Student>();
 
         public Team(int id, string name, string description, List<Employee> Employees, List<Student> Students)
         {
@@ -23,19 +22,19 @@ namespace School
         //Get ID
         public int getID()
         {
-            return this.id;
+            return id;
         }
 
         //Get name
         public string getName()
         {
-            return this.name;
+            return name;
         }
 
         //Get description
         public string getDesc()
         {
-            return this.description;
+            return description;
         }
 
         //Add a student
@@ -71,14 +70,12 @@ namespace School
         public List<Student> assignedStudents(Team team)
         {
             return team.Students;
-
         }
 
         //Find employees assigned to team
         public List<Employee> assignedEmployees(Team team)
         {
             return team.Employees;
-
         }
     }
 }

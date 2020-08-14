@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace School
 {
     public class Employee
     {
-        private int id;
-        private string name;
-        private decimal salary;
-        private bool paid;
+        private readonly int id;
 
-        private List<Team> teamsAssigned = new List<Team>();
+        private readonly List<Team> teamsAssigned = new List<Team>();
+        private string name;
+        private bool paid;
+        private decimal salary;
 
         public Employee(int id, string name, decimal salary, bool paid, List<Team> teamsAssigned)
         {
@@ -24,25 +23,25 @@ namespace School
         //Get ID
         public int getID()
         {
-            return this.id;
+            return id;
         }
 
         //Get name
         public string getName()
         {
-            return this.name;
+            return name;
         }
 
         //Get salary
         public decimal getSalary()
         {
-            return this.salary;
+            return salary;
         }
 
         //Get paid status
         public bool getPaid()
         {
-            return this.paid;
+            return paid;
         }
 
         // Get assigned teams
@@ -56,11 +55,13 @@ namespace School
         {
             this.name = name;
         }
+
         //Edit salary
         public void Edit(decimal salary)
         {
             this.salary = salary;
         }
+
         //Edit if the employee have been paid
         public void Edit(bool paid)
         {
@@ -70,15 +71,13 @@ namespace School
         //Add team
         public void Add(Team team)
         {
-            this.teamsAssigned.Add(team);
+            teamsAssigned.Add(team);
         }
 
         //Remove team
         public void Remove(Team team)
         {
-            this.teamsAssigned.Remove(team);
+            teamsAssigned.Remove(team);
         }
-
-
     }
 }

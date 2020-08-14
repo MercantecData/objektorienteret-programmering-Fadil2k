@@ -1,21 +1,23 @@
-﻿using System;
-
-namespace Test1Overload
+﻿namespace Test1Overload
 {
     public class Math
     {
-        #region Plus method  
+        #region Plus method
+
         public int Plus(int a, int b)
         {
             return a + b;
         }
+
         public float Plus(float a, float b)
         {
             return a + b;
         }
-        #endregion 
+
+        #endregion
 
         #region Minus method
+
         public int Minus(int a, int b)
         {
             return a - b;
@@ -29,6 +31,7 @@ namespace Test1Overload
         #endregion
 
         #region Multiply method
+
         public int Multiply(int a, int b)
         {
             return a * b;
@@ -42,6 +45,7 @@ namespace Test1Overload
         #endregion
 
         #region Divide method
+
         public int Divide(int a, int b)
         {
             return a / b;
@@ -53,6 +57,5 @@ namespace Test1Overload
         }
 
         #endregion
-
     }
 }

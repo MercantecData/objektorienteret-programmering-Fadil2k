@@ -1,8 +1,6 @@
-﻿using System;
-namespace Test1Abstract
+﻿namespace Test1Abstract
 {
     public interface Interface
     {
-
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace Test1Abstract
 {
     public class Abstract3 : AbstractClass
